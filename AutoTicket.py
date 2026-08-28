@@ -28,7 +28,7 @@ from telebot.types import InlineKeyboardButton as B
 from telebot.types import InlineKeyboardMarkup as K
 import tg_bot.CBT as CBT
 NAME = 'Auto Ticket'
-VERSION = '1.2.0'
+VERSION = '1.2.1'
 DESCRIPTION = 'Умный AI-диспетчер заказов: 3 категории, полный контекст чата и авто-сообщения покупателям'
 CREDITS = '@tinechelovec'
 UUID = '741dfd61-b890-4af7-91bf-021cbe421b66'
@@ -38,12 +38,13 @@ GROUP_URL = 'https://t.me/dev_thc_chat'
 CHANNEL_URL = 'https://t.me/by_thc'
 CHANNEL_MESSAGES_URL = 'https://t.me/by_thc?direct'
 GITHUB_URL = 'https://github.com/tinechelovec/FPC-Auto-Ticket'
-INSTRUCTION_URL = 'https://teletype.in/@tinechelovec/Auto-Ticket'
+INSTRUCTION_URL = 'https://teletype.media/@tinechelovec/Auto-Ticket'
+ALTERNATIVE_INSTRUCTION_URL = 'https://github.com/tinechelovec/FPC-Auto-Ticket/blob/main/instructions.md'
 ONLINE_UPDATE_URL = 'https://raw.githubusercontent.com/tinechelovec/FPC-Auto-Ticket/main/AutoTicket.py'
 DEV_THC_API_URL = os.getenv('DEV_THC_API_URL', 'https://dev-thc-site.vercel.app').rstrip('/')
 DEV_THC_PLUGIN_ID = 'fpc-auto-ticket'
 DEV_THC_VERSION = VERSION
-DEV_THC_CLIENT_VERSION = '1.2.0'
+DEV_THC_CLIENT_VERSION = '1.2.1'
 DEV_THC_PLUGIN_KEY = os.getenv('DEV_THC_PLUGIN_KEY', '7xK9mP2vQ8wR4nL1zT6cY3bH5jS0dF')
 DEV_THC_DEFAULT_POLL_INTERVAL = 120
 PLUGIN_DIR = Path('storage/plugins/AutoTicket')
@@ -2309,6 +2310,7 @@ def _info_keyboard() -> K:
     keyboard = K()
     keyboard.row(B('💬 Чат', url=GROUP_URL), B('📢 Канал', url=CHANNEL_URL))
     keyboard.row(B('📖 Инструкция', url=INSTRUCTION_URL), B('💻 GitHub', url=GITHUB_URL))
+    keyboard.row(B('📚 Альтернативная инструкция', url=ALTERNATIVE_INSTRUCTION_URL))
     keyboard.row(B('👤 Telegram автора', url=CREATOR_URL))
     keyboard.row(B('✉️ ТГ-канал сообщений', url=CHANNEL_MESSAGES_URL))
     keyboard.row(B('◀️ Назад', callback_data=CB_HOME))
